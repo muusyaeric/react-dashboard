@@ -5,10 +5,16 @@ import List from './pages/list/List'
 import New from './pages/new/New'
 import Single from './pages/single/Single'
 import { productInputs, userInputs } from "./formSource";
+import './style/dark.scss'
+import { useContext } from "react";
+import { DarkModeContext } from "./context/darkModeContext";
 
 function App() {
+
+  const {darkMode} = useContext(DarkModeContext)
+
   return (
-    <div className="App">
+    <div className={darkMode ? "app dark" : "app"}>
       <Router>
         <Routes>
           <Route path="/">
